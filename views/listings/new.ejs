@@ -1,0 +1,43 @@
+ <% layout("layouts/boilerPlate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1>Creating A New Listing</h1>
+      <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data" >
+        <div class="form-group">
+             <label for="title">Title</label>
+             <input type="text" required class="form-control" name="title" id="title" placeholder="Enter the title">
+             <div class="invalid-feedback">Please Enter a valid Title</div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" required class="form-control" id="description" placeholder="Enter the description"></textarea>
+            <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+         <div class="form-group">
+             <label for="url">Upload Image</label>
+            <input type="file" name="url" id="url" required class="form-control" placeholder="Enter the Image URL">
+            <small id="emailHelp" class="form-text text-muted">Upload your high quality image here (allowed format : png, jpg, jpeg).</small>
+        </div>
+        <div class="form-group">
+             <label for="price">Price</label>
+            <input type="number" name="price" required class="form-control" id="price" placeholder="Enter the Price">
+            <div class="invalid-feedback">Please Enter a valid price</div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-8" >
+                <label for="location">Location</label>
+               <input type="text" name="location" required class="form-control" id="location" placeholder="Enter the Location">
+               <div class="invalid-feedback">Please Enter a valid location</div>
+           </div>
+           <div class="form-group col-md-4">
+                <label for="country">Country</label>
+               <input type="text" name="country" required class="form-control" id="country" placeholder="Enter the Country">
+            <div class="invalid-feedback">Please Enter a valid country</div>
+           </div>
+        </div>
+        <button class="btn btn-dark my-btn mb-3">Add</button>
+    </form>
+</div>
+</div>
+</body>

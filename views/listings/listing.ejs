@@ -1,0 +1,99 @@
+<% layout("layouts/boilerPlate") %>
+ <body>
+        <div class="row mt-4">
+            <div class="col-6 offset-3 ">
+                <b>
+                    <h2>
+                        <p class="card-text">
+                            <%= listing.title %>
+                        </p>
+                    </h2>
+                </b>
+                <div class="card listing-card show-cards">
+                    <img src="<%= listing.image.url  %>" class="card-img-top" alt="<%= listing.image.filename  %>">
+                    <div class="card-body">
+                        <br>
+                        <b>Ownwer details : <br>
+                        </b> username : <%= listing.owner.username  %>; email :<%= listing.owner.email  %> 
+                        <br>
+                        <hr>
+                        <%= listing.description %> <br>
+                        &#8377;<%=listing.price==undefined ? 0 : listing.price.toLocaleString("en-In") %> / night
+                        <br>
+                        <%= listing.location %> <br>
+                        <%= listing.country %>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <% if(currentUser && currentUser._id.equals(listing.owner._id)){ %>
+            <div class="col-1 offset-3">
+                <form action="/listings/<%= listing._id  %>/edit">
+                    <button class="btn btn-dark ">Edit</button>
+                </form>
+            </div>
+            <div class="col-1  mb-4">
+                <form action="/listings/<%= listing._id %>?_method=DELETE" method="post">
+                    <button class="btn btn-dark my-btn">Delete</button>
+                </form>
+            </div>
+            <% } %>
+            <hr>
+            <!-- Review Form -->
+            <div class="col-6 offset-3">
+                <form action="/listings/<%= listing._id  %>/review" method="post" novalidate class="needs-validation">
+                    <h3>Add A Review</h3>
+                    <!-- <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <input type="range" required class="form-range" min="1" max="5" name="review[rating]"
+                            id="rating">
+                    </div> -->
+                    <div class="star-rating">
+                        <input type="radio" name="review[rating]" id="star5" value="5"><label for="star5">&#9733;</label>
+                        <input type="radio" name="review[rating]" id="star4" value="4"><label for="star4">&#9733;</label>
+                        <input type="radio" name="review[rating]" id="star3" value="3"><label for="star3">&#9733;</label>
+                        <input type="radio" name="review[rating]" id="star2" value="2"><label for="star2">&#9733;</label>
+                        <input type="radio" name="review[rating]" id="star1" checked value="1"><label for="star1">&#9733;</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" name="review[comment]" id="comment" required
+                            placeholder="Please enter your comment"></textarea>
+                        <div class="invalid-feedback">Please Enter a valid comment</div>
+                    </div>
+                    <button class="btn btn-dark mt-3"> Add A Review</button>
+                </form>
+
+                <!-- showing review -->
+                <hr>
+                <h3><b>All Reviews</b></h3>
+                <div class="review">
+                    <div class="row">
+                        <% for(let review of listing.review){ %>
+                            <div class="card mt-3 p-2 col-5 ms-3 mb-2">
+                                <div class="card-body">
+                                    <div class="headind-review-card">
+                                        <h5 class="card-title">@<%= review.author.username || " Random name "  %> </h5>
+                                        <% if(currentUser && currentUser._id.equals(review.author._id)){ %>
+                                        <form method="post" action="/listings/<%= listing._id  %>/review/<%= review._id  %>?_method=DELETE">
+                                            <button class="btn btn-outline-secondary" style="border: none !important;"><i class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                        <% } %>
+                                    </div>
+                                    <p class="card-text">
+                                        <!-- <span>Rating:</span> -->
+                                          <%   for(let i=0; i<review.rating; i++){ %>
+                                           <span> <i class="fa-solid fa-star"></i></span>
+                                            <% } %>
+                                            <br>
+                                        <%= review.comment %>
+                                    </p>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </body>

@@ -1,0 +1,134 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white ;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.footer-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.footer-info-links a:hover{
+    text-decoration: underline;
+}
+.footer-info{
+    display: flex;
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+}
+.footer-info-links, .footer-info-socials, .footer-info-brand{
+    width: 100%;
+    /* vertical-align: middle; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-info-socials i{
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+}
+/* Cards */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.link{
+    text-decoration: none;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.my-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Card */
+
+.card-img-top{
+    height: 30vh;
+}
+.show-cards{
+    padding-left: 0 ;
+    padding-right: 0;
+}
+.headind-review-card{
+    display: flex;
+    /* align-items: space-evenly; */
+    justify-content: space-between;
+}
+.star-rating {
+    direction: rtl;
+    display: flex;
+    gap: 5px;
+    width: 10rem;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #212529;
+}
+.img-preview img{
+    width: 6rem;
+    height: 6rem;
+}
+.btn-search{
+    border-radius: 3rem !important;
+    padding: 0 1rem !important;
+}
+.search-inp{
+    border-radius: 5rem !important;
+    padding: 0.5rem 4rem 0.5rem 1rem !important;
+}
+.btn-search i{
+    display: inline;
+}
+

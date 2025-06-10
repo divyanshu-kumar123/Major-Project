@@ -1,0 +1,33 @@
+<% layout("layouts/boilerPlate") %>
+
+    <body>
+        <div class="row">
+            <div class="col-5 offset-3 mt-5">
+                <h1>Login on Wander Lust</h1><br><br>
+                <form action="/login" method="post" novalidate class="needs-validation">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" required class="form-control" name="username" id="username"
+                            placeholder="Enter your name">
+                        <div class="invalid-feedback">Please enter a valid username</div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required class="form-control" id="email"
+                        placeholder="Enter your email">
+                        <div class="invalid-feedback">Please enter a valid name</div>
+                        <div class="valid-feedback">Correct Email Id</div>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" required class="form-control" id="password"
+                            placeholder="Enter your password">
+                        <div class="invalid-feedback">Please Enter a valid password</div>
+                    </div>
+                    <button class="btn btn-success mb-3">Login</button>
+                </form> 
+                <p>Not registered on wanderLust? <a href="/signup">Register</a></p>
+
+            </div>
+        </div>
+    </body>
