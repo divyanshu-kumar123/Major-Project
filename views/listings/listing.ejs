@@ -21,7 +21,11 @@
                         &#8377;<%=listing.price==undefined ? 0 : listing.price.toLocaleString("en-In") %> / night
                         <br>
                         <%= listing.location %> <br>
-                        <%= listing.country %>
+                        <%= listing.country %><br>
+                        <b>Category</b>
+                        <% for(let cat of listing.category){ %>
+                               <li><%= cat %></li> 
+                        <% } %>
                     </div>
                 </div>
             </div>

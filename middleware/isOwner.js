@@ -1,4 +1,4 @@
-const Listing = require("../model/listing")
+const {Listing} = require("../model/listing")
 const isOwner = async (req, res, next)=>{
     const { id } = req.params;
     const currListing = await Listing.findById(id);

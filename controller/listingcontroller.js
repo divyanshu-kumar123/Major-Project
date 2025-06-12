@@ -1,15 +1,22 @@
-const Listing = require("../model/listing");
+const {Listing, CATEGORY_OPTIONS } = require("../model/listing");
 const { listingSchema, reviewSchema } = require('../joiSchema.js')
 
 //Index Route
 module.exports.index = async (req, res) => {
-    const listings = await Listing.find({});
+    let listings;
+
+    if (req.query.category) {
+        listings = await Listing.find({ category: req.query.category });
+    } else {
+        listings = await Listing.find({});
+    }
+    console.log(listings);
     res.render("listings/index.ejs", { listings })
 }
 
 //Add Route
 module.exports.newListing = (req, res) => {
-    res.render("listings/new.ejs")
+    res.render("listings/new.ejs", {CATEGORY_OPTIONS})
 }
 
 //create route
@@ -21,6 +28,7 @@ module.exports.createListing = async (req, res) => {
         title: listing.title,
         description: listing.description,
         image: { filename: req.file.filename , url:  req.file.path },
+        category : listing.category,
         price: listing.price,
         location: listing.location,
         country: listing.country,
@@ -72,6 +80,10 @@ module.exports.updateListing = async (req, res) => {
     req.flash("success", "Listing updated successfully");
     res.redirect(`/listings/${id}`);
 }
+
+// module.exports.filterListing = async (req, res) => {
+//     res.send(req.query.category);
+// }
 
 //Destroy/Delete Route
 module.exports.destroyListing = async (req, res) => {

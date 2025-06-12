@@ -1,12 +1,12 @@
 const express = require('express');
-const Listing = require("../model/listing");
+const {Listing} = require("../model/listing");
 const wrapAsync = require('../utils/wrapAsync.js');
 const {listingSchema, reviewSchema} = require('../joiSchema.js')
 const listingValidate = require('../middleware/listingValidate.js')
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn.js");
 const isOwner = require('../middleware/isOwner.js');
-const { index, newListing, createListing, viewListing, editListing, updateListing, destroyListing } = require('../controller/listingcontroller.js');
+const { index, newListing, createListing, viewListing, editListing, updateListing, destroyListing, filterListing } = require('../controller/listingcontroller.js');
 const multer  = require('multer');
 const { storage } = require('../cloudCongig.js');
 const upload = multer({ storage });

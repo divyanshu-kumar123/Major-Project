@@ -7,7 +7,7 @@
         }
 
         .filter {
-            margin-left: 2rem;
+            margin-left: 1rem;
             margin-top: 2rem;
             text-align: center;
             opacity: 0.7;
@@ -34,6 +34,11 @@
             display: flex;
             align-items: center;
         }
+        .filter a{
+            text-decoration: none;
+            color: black;
+            font-size: 0.8rem;
+        }
     </style>
 
     <body>
@@ -41,49 +46,73 @@
 
         <div class="filters">
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-fire"></i></div>
+                <a href="/listings?category=Trending">
+                    <div class="icon"><i class="fa-solid fa-fire"></i></div>
+                </a>
                 <p>Trending</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-bed"></i></i></div>
+                <a href="/listings?category=Room">
+                    <div class="icon"><i class="fa-solid fa-bed"></i></div>
+                </a>
                 <p>Room</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
-                <p>Iconic Cities</p>
+                <a href="/listings?category=IconicCity">
+                    <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
+                </a>
+                <p>Iconic City</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                <a href="/listings?category=Mountains">
+                    <div class="icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                </a>
                 <p>Mountains</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
+                <a href="/listings?category=Castles">
+                    <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
+                </a>
                 <p>Castles</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-person-swimming"></i></div>
+                <a href="/listings?category=AmazingPools">
+                    <div class="icon"><i class="fa-solid fa-person-swimming"></i></div>
+                </a>
                 <p>Amazing Pools</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-tent-arrow-down-to-line"></i></div>
+                <a href="/listings?category=Camping">
+                    <div class="icon"><i class="fa-solid fa-tent-arrow-down-to-line"></i></div>
+                </a>
                 <p>Camping</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-cow"></i></div>
+                <a href="/listings?category=Farms">
+                    <div class="icon"><i class="fa-solid fa-cow"></i></div>
+                </a>
                 <p>Farms</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
+                <a href="/listings?category=Arctic">
+                    <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
+                </a>
                 <p>Arctic</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-igloo"></i></div>
+                <a href="/listings?category=Domes">
+                    <div class="icon"><i class="fa-solid fa-igloo"></i></div>
+                </a>
                 <p>Domes</p>
             </div>
             <div class="filter">
-                <div class="icon"><i class="fa-solid fa-ship"></i></div>
+                <a href="/listings?category=HouseBoats">
+                    <div class="icon"><i class="fa-solid fa-ship"></i></div>
+                </a>
                 <p>House Boats</p>
             </div>
+        
+        
 
             <div class="tax-toggle ">
                 <div class="form-check-reverse form-switch">
