@@ -1,5 +1,5 @@
 const Review = require("../model/review.js");
-const Listing = require("../model/listing");
+const {Listing} = require("../model/listing");
 
 // addReview Route
 module.exports.addReview = async(req, res)=>{
